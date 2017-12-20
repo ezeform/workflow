@@ -1,4 +1,10 @@
 /* global css*/
+input, span, textarea, li, .btn, .form-control { 
+  border-radius: 0px !important;
+}
+* {
+  outline: transparent !important;
+}
 html {
   font-size: 12px;
 }
