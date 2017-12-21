@@ -22,7 +22,6 @@ import 'moment/locale/hu';
 import {TicketBidFormComponent} from './ticket/ticket-bid-form/ticket-bid-form.component';
 import {LoadingSpinnerComponent} from './core/loading-spinner/loading-spinner.component';
 import {BidService} from './shared/bid.service';
-import * as firebase from 'firebase';
 import {environment} from "../environments/environment";
 import { FormioModule } from 'angular-formio';
 
@@ -31,6 +30,26 @@ import { FabricSpinnerModule } from './lib/spinner/spinner.module';
 import { FabricCommandBarModule } from './lib/commandbar/commandbar.module';
 import { FabricNavBarModule } from './lib/nav-bar/nav-bar.module';
 import * as fabricIcons from '@uifabric/icons';
+import * as firebase from 'firebase';
+import { loadTheme } from 'office-ui-fabric-react/lib/Styling';
+
+loadTheme({
+  palette: {
+    'themePrimary': '#004578',
+    'neutralLighter': '#005a9e',
+    'neutralLighterAlt': '#2b88d8',
+    'neutralLight': '#106ebe',
+    'neutralQuaternaryAlt': '#106ebe',
+    'neutralQuaternary': '#106ebe',
+    'themeDarkAlt': '#f4f4f4',
+    'neutralPrimary': '#eaeaea',
+    'neutralSecondary': '#f4f4f4',
+    'neutralDark': '#f8f8f8',
+    'themeDarker': '#f4f4f4',
+    'black': '#ffffff',
+    'themeDark': '#f4f4f4'
+  }
+});
 
 @NgModule({
   declarations: [

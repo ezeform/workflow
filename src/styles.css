@@ -1,10 +1,16 @@
 /* global css*/
+
 input, span, textarea, li, .btn, .form-control { 
   border-radius: 0px !important;
 }
+h3 {
+  font-weight: 300 !important;
+}
+
 * {
   outline: transparent !important;
 }
+
 html {
   font-size: 12px;
 }
@@ -67,3 +73,4 @@ footer {
   }
 
 }
+

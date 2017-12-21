@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   public isCollapsed = true;
   public itemsNonFocusable: any;
   constructor(public userService: UserService, public route: Router) { 
-   this.itemsNonFocusable = [
+  this.itemsNonFocusable = [
     {
       key: 'dashboard',
       name: 'Dashboard',
@@ -21,7 +21,7 @@ export class NavbarComponent implements OnInit {
       key: 'forms', 
       name: 'Forms',
       icon: 'OfficeFormsLogo',
-      onClick: () => { this.routeLink('/event') }
+      onClick: () => { this.routeLink('/forms') }
     }, {
       key: 'Report', 
       name: 'Reports',

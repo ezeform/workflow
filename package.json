@@ -28,6 +28,7 @@
     "bootstrap": "^4.0.0-beta",
     "core-js": "^2.5.3",
     "firebase": "^4.8.0",
+    "jquery": "^3.2.1",
     "ngx-bootstrap": "^2.0.0-rc.0",
     "office-ui-fabric-react": "^5.34.2",
     "react": "^16.2.0",
