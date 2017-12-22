@@ -24,6 +24,7 @@ import {LoadingSpinnerComponent} from './core/loading-spinner/loading-spinner.co
 import {BidService} from './shared/bid.service';
 import {environment} from "../environments/environment";
 import { FormioModule } from 'angular-formio';
+import { GridsterModule } from 'angular-gridster2';
 
 import { FabricLabelModule } from './lib/label/label.module';
 import { FabricSpinnerModule } from './lib/spinner/spinner.module';
@@ -32,6 +33,8 @@ import { FabricNavBarModule } from './lib/nav-bar/nav-bar.module';
 import * as fabricIcons from '@uifabric/icons';
 import * as firebase from 'firebase';
 import { loadTheme } from 'office-ui-fabric-react/lib/Styling';
+import { WindowRef } from '../services/window-ref';
+
 
 loadTheme({
   palette: {
@@ -78,13 +81,15 @@ loadTheme({
     FabricSpinnerModule,
     FabricCommandBarModule,
     FabricNavBarModule,
+    GridsterModule
   ],
   providers: [
     EventService,
     UserService,
     TicketService,
     LoggedInGuardGuard,
-    BidService
+    BidService,
+    WindowRef
   ],
   bootstrap: [AppComponent]
 })

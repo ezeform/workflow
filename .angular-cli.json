@@ -20,8 +20,8 @@
       "prefix": "app",
       "styles": [
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "styles.css",
-        "../src/assets/formio/formio-full.css"
+        "../src/assets/css/ezeform.css",
+        "../src/assets/css/styles.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
