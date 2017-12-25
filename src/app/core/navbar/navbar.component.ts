@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../shared/user.service';
 import { Router } from '@angular/router';
+import { WindowRef } from '../../../services/window-ref';
 
 @Component({
   selector: 'app-navbar',
@@ -10,43 +11,10 @@ import { Router } from '@angular/router';
 export class NavbarComponent implements OnInit {
   public isCollapsed = true;
   public itemsNonFocusable: any;
-  constructor(public userService: UserService, public route: Router) { 
-  this.itemsNonFocusable = [
-    {
-      key: 'dashboard',
-      name: 'Dashboard',
-      icon: 'ViewDashboard',
-      onClick: () => { this.routeLink('/home') }
-    }, {
-      key: 'forms', 
-      name: 'Forms',
-      icon: 'OfficeFormsLogo',
-      onClick: () => { this.routeLink('/forms') }
-    }, {
-      key: 'Report', 
-      name: 'Reports',
-      icon: 'CRMReport',
-      onClick: () => { this.routeLink('/event') }
-    }, {
-      key: 'settings',
-      name: 'Settings',
-      icon: 'Settings',
-      ariaLabel: 'New. Use left and right arrow keys to navigate',
-      onClick: () => { this.routeLink('/home') },
-      items: [
-        {
-          key: 'emailMessage',
-          name: 'Email message',
-          icon: 'Mail'
-        },
-        {
-          key: 'calendarEvent',
-          name: 'Calendar event',
-          icon: 'Calendar'
-        }
-      ]
-    }
-  ];
+  public global: any;
+  constructor(public userService: UserService, public route: Router, public window: WindowRef) { 
+    this.global = window.nativeWindow;
+  
   }
 
   routeLink(url: string){
@@ -54,6 +22,10 @@ export class NavbarComponent implements OnInit {
   }
 
   ngOnInit() {
+    var CommandBarElements = document.querySelectorAll(".ms-CommandBar");
+    for (var i = 0; i < CommandBarElements.length; i++) {
+      new this.global.fabric['CommandBar'](CommandBarElements[i]);
+    }
   }
 
   logout() {
@@ -61,47 +33,3 @@ export class NavbarComponent implements OnInit {
   }
 
 }
-
-export const itemsNonFocusable = [
-  {
-    key: 'newItem',
-    name: 'New',
-    icon: 'Add',
-    ariaLabel: 'New. Use left and right arrow keys to navigate',
-    onClick: () => { return; },
-    items: [
-      {
-        key: 'emailMessage',
-        name: 'Email message',
-        icon: 'Mail'
-      },
-      {
-        key: 'calendarEvent',
-        name: 'Calendar event',
-        icon: 'Calendar'
-      }
-    ]
-  },
-  {
-    key: 'upload',
-    name: 'Upload',
-    icon: 'Upload',
-    onClick: () => { return; },
-    ['data-automation-id']: 'uploadNonFocusButton'
-  }
-];
-
-export const farItemsNonFocusable = [
-  {
-    key: 'saveStatus',
-    name: 'Your page has been saved',
-    icon: 'CheckMark',
-    ['data-automation-id']: 'saveStatusCheckMark'
-  },
-  {
-    key: 'publish',
-    name: 'Publish',
-    icon: 'ReadingMode',
-    onClick: () => { return; }
-  }
-];

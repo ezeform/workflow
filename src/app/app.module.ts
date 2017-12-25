@@ -26,37 +26,26 @@ import {environment} from "../environments/environment";
 import { FormioModule } from 'angular-formio';
 import { GridsterModule } from 'angular-gridster2';
 
-import { FabricLabelModule } from './lib/label/label.module';
-import { FabricSpinnerModule } from './lib/spinner/spinner.module';
-import { FabricCommandBarModule } from './lib/commandbar/commandbar.module';
-import { FabricNavBarModule } from './lib/nav-bar/nav-bar.module';
-import * as fabricIcons from '@uifabric/icons';
 import * as firebase from 'firebase';
-import { loadTheme } from 'office-ui-fabric-react/lib/Styling';
 import { WindowRef } from '../services/window-ref';
 
-
-loadTheme({
-  palette: {
-    'themePrimary': '#004578',
-    'neutralLighter': '#005a9e',
-    'neutralLighterAlt': '#2b88d8',
-    'neutralLight': '#106ebe',
-    'neutralQuaternaryAlt': '#106ebe',
-    'neutralQuaternary': '#106ebe',
-    'themeDarkAlt': '#f4f4f4',
-    'neutralPrimary': '#eaeaea',
-    'neutralSecondary': '#f4f4f4',
-    'neutralDark': '#f8f8f8',
-    'themeDarker': '#f4f4f4',
-    'black': '#ffffff',
-    'themeDark': '#f4f4f4'
-  }
-});
+import {
+  MatIconModule,
+  MatButtonModule,
+  MatSelectModule,
+  MatInputModule,
+  MatTooltipModule,
+  MatCheckboxModule, MatSidenavModule
+} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HomeModule } from './home/home.module';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    DashboardComponent,
     NavbarComponent,
     JumbotronComponent,
     EventcardComponent,
@@ -69,6 +58,7 @@ loadTheme({
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     CollapseModule.forRoot(),
@@ -76,11 +66,8 @@ loadTheme({
     AppRoutingModule,
     HttpClientModule,
     MomentModule,
+    MatIconModule, MatButtonModule, MatSelectModule, MatInputModule, MatTooltipModule, MatCheckboxModule, MatSidenavModule,
     FormioModule,
-    FabricLabelModule,
-    FabricSpinnerModule,
-    FabricCommandBarModule,
-    FabricNavBarModule,
     GridsterModule
   ],
   providers: [
@@ -96,6 +83,5 @@ loadTheme({
 export class AppModule {
   constructor() {
     firebase.initializeApp(environment.firebase);
-    fabricIcons.initializeIcons();    
   }
 }

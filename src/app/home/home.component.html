@@ -1,8 +1,26 @@
-<!-- <app-jumbotron>
-  
-</app-jumbotron> -->
-<gridster [options]="options">
-    <gridster-item [item]="item" *ngFor="let item of dashboard">
-        <!-- your content here -->
-    </gridster-item>
-</gridster>
+<div class="ms-Pivot">
+    <ul class="ms-Pivot-links">
+        <li class="ms-Pivot-link is-selected" data-content="my-dashboard" title="My Dashboard" tabindex="1">
+        Overview
+        </li>
+        <li class="ms-Pivot-link " data-content="ticketing-dashboard" title="Ticketing Dashboard" tabindex="1">
+        IT Ticketing
+        </li>
+        <li class="ms-Pivot-link " data-content="treatment-dashboard" title="Treatment Dashboard" tabindex="1">
+        Doctor Treatment
+        </li>
+        <li class="ms-Pivot-link" tabindex="1">
+        <i class="ms-Pivot-ellipsis ms-Icon ms-Icon--More"></i>
+        </li>
+    </ul>
+    <div class="ms-Pivot-content" data-content="my-dashboard" style="
+    height: 90vh">
+        <app-dashboard></app-dashboard>
+    </div>
+    <div class="ms-Pivot-content" data-content="ticketing-dashboard">
+        This is the recent tab.
+    </div>
+    <div class="ms-Pivot-content" data-content="treatment-dashboard">
+        This is the shared with me tab.
+    </div>
+</div>

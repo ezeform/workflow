@@ -1,6 +1,27 @@
+.ms-ContextualMenu-link:focus:focus{
+    border: 1px solid transparent !important;
+    outline: transparent !important;
+}
+*:focus:before { 
+    border: 1px solid transparent !important;
+    outline: 1px solid transparent !important;
+} 
+
 .commandbar {
     margin-bottom: 120px !important;
 }
 .ms-fontColor-themePrimary{
     color: #004578;
 }
+/* .ms-CommandButton--pivot::before{
+    background-color: #0078d7 !important;
+    height: 40px !important;
+    z-index: 0 !important;
+}
+.is-active .ms-CommandButton-label{
+    color: #eaeaea !important;
+}
+.ms-CommandButton+.ms-CommandButton{
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+} */

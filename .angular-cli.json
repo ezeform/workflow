@@ -19,11 +19,13 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "../src/assets/css/ezeform.css",
-        "../src/assets/css/styles.css"
+        "styles.css",
+        "theme.scss",
+        "../bower_components/office-ui-fabric-js/dist/css/fabric.components.min.css",
+        "../bower_components/office-ui-fabric-js/dist/css/fabric.min.css"
+        
       ],
-      "scripts": [],
+      "scripts": ["../bower_components/office-ui-fabric-js/dist/js/fabric.min.js"],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",
