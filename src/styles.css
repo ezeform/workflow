@@ -3,9 +3,6 @@
 input, span, textarea, li, .btn, .form-control { 
   border-radius: 0px !important;
 }
-h3 {
-  font-weight: 300 !important;
-}
 
 /* Custom Fabric */
 * {
@@ -15,57 +12,9 @@ h3 {
 
 html, body {
   font-size: 12px;
-  /* height: 100vh; */
+  background: #dadada;
   margin: 0;
   padding: 0;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-.lead {
-  font-size: 1.2em;
-}
-
-.content-container {
-  min-height: calc(100vh - 60px);
-  display: flex;
-  flex-direction: column;
-}
-
-footer {
-  height: 60px;
-}
-
-/* index.html css*/
-.index_card {
-  border: none;
-}
-
-.index_text {
-  min-height: 8em;
-}
-
-.index_btn_card {
-  width: 10em;
-}
-
-.calendar {
-  height: 50px;
-  width: 50px;
-}
-
-.profil {
-  height: 200px;
-  width: 200px;
 }
 
 @media (min-width: 768px) {

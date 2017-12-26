@@ -5,12 +5,12 @@ import { EventService } from '../../shared/event.service';
 import { UserService } from '../../shared/user.service';
 
 @Component({
-  selector: 'app-event-list',
-  templateUrl: './event-list.component.html',
-  styleUrls: ['./event-list.component.css']
+  selector: 'app-report-list',
+  templateUrl: './report-list.component.html',
+  styleUrls: ['./report-list.component.css']
 })
-export class EventListComponent implements OnInit {
-// ez jo pelda lehet smart es dumb componentre
+export class ReportListComponent implements OnInit {
+
   public eventsGrouppedBy3: EventModel[];
   public events$: Observable<EventModel[]>;
   public events: EventModel[];
@@ -32,23 +32,23 @@ export class EventListComponent implements OnInit {
         }, []);
       });
 
-    // this._eventService.getAllEvents().subscribe(data => {
-    //   this.eventsGrouppedBy3 = data.reduce((acc, curr: EventModel, ind: number) => {
-    //     if (ind % 3 === 0) {
-    //       acc.push([]);
-    //     }
-    //     acc[acc.length - 1].push(curr);
-    //     return acc;
-    //   }, []);
-    // });
+    this._eventService.getAllEvents().subscribe(data => {
+      this.eventsGrouppedBy3 = data.reduce((acc, curr: EventModel, ind: number) => {
+        if (ind % 3 === 0) {
+          acc.push([]);
+        }
+        acc[acc.length - 1].push(curr);
+        return acc;
+      }, []);
+    });
 
-    // this._eventService.getAllEvents().subscribe(data => {
-    //   this.events = data;
-    // });
-    // this.events$ = this._eventService.getAllEvents();
+    this._eventService.getAllEvents().subscribe(data => {
+      this.events = data;
+    });
+    this.events$ = this._eventService.getAllEvents();
   }
 
-  //   // ind!! [0,1,2,3,4,5,6,7,8] -- reduce --> [[0,1,2],[3,4,5],[6,7,8]]
+    // ind!! [0,1,2,3,4,5,6,7,8] -- reduce --> [[0,1,2],[3,4,5],[6,7,8]]
   //   this.eventsGrouppedBy3 = this._eventService.getAllEvents()
   //     .reduce((acc, curr: EventModel, ind: number) => {
   //       if (ind % 3 === 0) {
@@ -61,4 +61,3 @@ export class EventListComponent implements OnInit {
   // }
 
 }
-

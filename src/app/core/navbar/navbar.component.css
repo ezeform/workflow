@@ -1,3 +1,7 @@
+app-navbar{
+    
+}
+
 .ms-ContextualMenu-link:focus:focus{
     border: 1px solid transparent !important;
     outline: transparent !important;
@@ -9,6 +13,11 @@
 
 .commandbar {
     margin-bottom: 120px !important;
+}
+.ms-CommandBar {
+    position: fixed !important;
+    width: 100% !important;
+    z-index: 500 !important;
 }
 .ms-fontColor-themePrimary{
     color: #004578;

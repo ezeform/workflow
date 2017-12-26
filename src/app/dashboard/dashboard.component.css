@@ -72,6 +72,6 @@ mat-sidenav-container {
     z-index: 100;
   }
   
-  [_nghost-c11] {
+  gridster {
     background: #dadada !important;
   }

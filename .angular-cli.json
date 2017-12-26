@@ -21,6 +21,7 @@
       "styles": [
         "styles.css",
         "theme.scss",
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
         "../bower_components/office-ui-fabric-js/dist/css/fabric.components.min.css",
         "../bower_components/office-ui-fabric-js/dist/css/fabric.min.css"
         

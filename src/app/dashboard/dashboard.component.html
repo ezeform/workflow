@@ -1,4 +1,4 @@
-<mat-sidenav-container>
+<mat-sidenav-container style="height: 100vh">
     <mat-sidenav #sidenav mode="over">
         <label class="mat-headline cols-2">Grid Settings</label>
         <mat-form-field>
@@ -185,13 +185,15 @@
             <button mat-icon-button mat-raised-button class="drag-handler">
                 <mat-icon>open_with</mat-icon>
             </button>
-            <button mat-icon-button mat-raised-button class="remove-button" (mousedown)="removeItem($event, item)"
-                    (touchstart)="removeItem($event, item)" matTooltip="Remove">
+            <button mat-icon-button mat-raised-button class="remove-button" 
+                *ngIf="false"
+                (mousedown)="removeItem($event, item)"
+                (touchstart)="removeItem($event, item)" matTooltip="Remove">
                 <mat-icon>delete</mat-icon>
             </button>
             </div>
             <label *ngIf="!item.hasContent">{{item.label}}</label>
-            <button mat-mini-fab *ngIf="!item.hasContent" (mousedown)="removeItem($event, item)"
+            <button mat-mini-fab *ngIf="item.hasContent" (mousedown)="removeItem($event, item)"
                     (touchstart)="removeItem($event, item)" matTooltip="Remove">
             <mat-icon>delete</mat-icon>
             </button>

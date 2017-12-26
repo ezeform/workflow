@@ -9,7 +9,6 @@ import {AppComponent} from './app.component';
 import {FooterComponent} from './core/footer/footer.component';
 import {JumbotronComponent} from './core/jumbotron/jumbotron.component';
 import {NavbarComponent} from './core/navbar/navbar.component';
-import {EventcardComponent} from './event/eventcard/eventcard.component';
 import {EventService} from './shared/event.service';
 import {LoggedInGuardGuard} from './shared/logged-in-guard.guard';
 import {TicketService} from './shared/ticket.service';
@@ -41,6 +40,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { HomeModule } from './home/home.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EventcardComponent } from './report/eventcard/eventcard.component';
 
 @NgModule({
   declarations: [

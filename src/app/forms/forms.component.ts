@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-forms',
   templateUrl: './forms.component.html',
-  styleUrls: ['./forms.component.css', "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"]
+  styleUrls: ['./forms.component.css']
 })
 export class FormsComponent implements OnInit {
 
